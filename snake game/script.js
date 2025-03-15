@@ -68,19 +68,6 @@ function generateFood() {
     food.y = Math.floor(Math.random() * (canvas.height / 10)) * 10;
 }
 
-// Yön tuşlarına göre yılanı hareket ettirme
-document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowUp" && snakeDirection !== "DOWN") {
-        snakeDirection = "UP";
-    } else if (e.key === "ArrowDown" && snakeDirection !== "UP") {
-        snakeDirection = "DOWN";
-    } else if (e.key === "ArrowLeft" && snakeDirection !== "RIGHT") {
-        snakeDirection = "LEFT";
-    } else if (e.key === "ArrowRight" && snakeDirection !== "LEFT") {
-        snakeDirection = "RIGHT";
-    }
-});
-
 // Oyun sıfırlama fonksiyonu
 function resetGame() {
     snake = [
@@ -98,5 +85,30 @@ function resetGame() {
 function startGame() {
     gameInterval = setInterval(moveSnake, gameSpeed);
 }
+
+// Butonlar ile yön kontrolü
+document.getElementById("up").addEventListener("click", () => {
+    if (snakeDirection !== 'DOWN') {
+        snakeDirection = 'UP';
+    }
+});
+
+document.getElementById("down").addEventListener("click", () => {
+    if (snakeDirection !== 'UP') {
+        snakeDirection = 'DOWN';
+    }
+});
+
+document.getElementById("left").addEventListener("click", () => {
+    if (snakeDirection !== 'RIGHT') {
+        snakeDirection = 'LEFT';
+    }
+});
+
+document.getElementById("right").addEventListener("click", () => {
+    if (snakeDirection !== 'LEFT') {
+        snakeDirection = 'RIGHT';
+    }
+});
 
 startGame();

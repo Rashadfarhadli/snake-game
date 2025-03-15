@@ -1,28 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
 
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    margin: 0;
-  padding-top: 30px;
- 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 
-
-
-.yazi {
-    font-family: "Tektur", sans-serif;
-     color: red;
-      text-align: center;
-
-}
-
-.yazi i{
-    gap: 15px;
-}
 .game-container {
     text-align: center;
 }
@@ -36,4 +30,39 @@ canvas {
     margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+
+    #controls {
+        flex-direction: column;
+    }
+
+    button {
+        margin: 5px 0;
+    }
 }
