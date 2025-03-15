@@ -32,6 +32,12 @@ canvas {
     font-weight: bold;
 }
 
+.yazi h1{
+    font-family: "Tektur", sans-serif;
+    color: red;
+    text-align: center;
+}
+
 #controls {
     display: flex;
     justify-content: center;
